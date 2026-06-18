@@ -35,9 +35,9 @@ jobs:
 
       - name: Attendre que MySQL soit pret
         run: |
-          for i in $(seq 1 30); do
-            if docker-compose exec -T mysql mysqladmin ping -h localhost -uroot -proot --silent; then
-              echo "MySQL pret"; break
+          for i in $(seq 1 40); do
+            if docker-compose exec -T mysql mysqladmin ping -h 127.0.0.1 -uroot -proot --silent; then
+              echo "MySQL accepte les connexions TCP"; sleep 5; break
             fi
             echo "Attente MySQL... ($i)"; sleep 5
           done

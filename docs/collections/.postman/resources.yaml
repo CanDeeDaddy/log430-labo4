@@ -1,0 +1,7 @@
+# Use this workspace to collaborate
+workspace:
+  id: 3af68df3-1de3-4370-a27d-6726d3d045b4
+
+localResources:
+  collections:
+    - ..\labo03.json

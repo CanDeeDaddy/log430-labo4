@@ -26,7 +26,6 @@ def generate_reports_and_cache():
     threading.Timer(2.0, get_report_best_selling_products, args=(True,)).start()
     threading.Timer(60.0, generate_reports_and_cache).start()
 
-generate_reports_and_cache()
 
 @app.get('/health-check')
 def health():
@@ -128,5 +127,6 @@ def metrics():
     return generate_latest(), 200, {"Content-Type": CONTENT_TYPE_LATEST}
 # Start Flask app
 if __name__ == '__main__':
+    generate_reports_and_cache()
     app.run(host='0.0.0.0', port=5000)
 
